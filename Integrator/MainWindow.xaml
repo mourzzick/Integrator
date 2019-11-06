@@ -65,12 +65,12 @@
             </DataGrid.ColumnHeaderStyle>
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="IDEAL" Binding="{Binding Ideal}" />
-                <DataGridTextColumn Header="Förnamn" Binding="{Binding FirstName}" />
-                <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" />
-                <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" />
-                <DataGridTextColumn Header="Anmälningskod" Binding="{Binding CourseRegistrationNumber}" />
-                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade}"/>
+                <DataGridTextColumn Header="IDEAL" Binding="{Binding Ideal}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Förnamn" Binding="{Binding FirstName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Anmälningskod" Binding="{Binding CourseRegistrationNumber}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade}" />
             </DataGrid.Columns>
             
         </DataGrid>
