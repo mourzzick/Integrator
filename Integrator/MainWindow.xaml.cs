@@ -29,7 +29,11 @@ namespace Integrator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(students[0].Assignment.AssignmentGrade);
+            foreach (var student in students)
+            {
+                Console.WriteLine(student.Assignment.AssignmentGrade);
+            }
+            
         }
     }
 }
