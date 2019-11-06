@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="0"
@@ -70,9 +71,10 @@
                 <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Anmälningskod" Binding="{Binding CourseRegistrationNumber}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade}" />
+                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade, Mode=TwoWay}" />
             </DataGrid.Columns>
             
         </DataGrid>
+        <Button Grid.Row="2" Content="Read Students" FontSize="16" Margin="5" Click="Button_Click"/>
     </Grid>
 </Window>

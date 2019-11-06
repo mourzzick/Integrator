@@ -26,5 +26,10 @@ namespace Integrator
             InitializeComponent();
             studentDataGrid.ItemsSource = students;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(students[0].Assignment.AssignmentGrade);
+        }
     }
 }
