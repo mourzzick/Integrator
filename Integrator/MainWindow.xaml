@@ -48,6 +48,7 @@
         </StackPanel>
         
         <DataGrid
+            x:Name="studentDataGrid"
             Grid.Column="0"
             Grid.Row="1"
             Margin="2"
@@ -64,12 +65,12 @@
             </DataGrid.ColumnHeaderStyle>
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="IDEAL" />
-                <DataGridTextColumn Header="Förnamn"/>
-                <DataGridTextColumn Header="Efternamn"/>
-                <DataGridTextColumn Header="Personnummer"/>
-                <DataGridTextColumn Header="Anmälningskod"/>
-                <DataGridTextColumn Header="Examination 003"/>
+                <DataGridTextColumn Header="IDEAL" Binding="{Binding Ideal}" />
+                <DataGridTextColumn Header="Förnamn" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" />
+                <DataGridTextColumn Header="Anmälningskod" Binding="{Binding CourseRegistrationNumber}" />
+                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade}"/>
             </DataGrid.Columns>
             
         </DataGrid>
