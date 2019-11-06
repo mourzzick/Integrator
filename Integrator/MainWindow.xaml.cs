@@ -20,9 +20,11 @@ namespace Integrator
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Student> students = StudentDAO.GetStudents();
         public MainWindow()
         {
             InitializeComponent();
+            studentDataGrid.ItemsSource = students;
         }
     }
 }
