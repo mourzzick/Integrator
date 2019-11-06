@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Integrator
 {
-    class StudentDAO
+    public static class StudentDAO
     {
         public static List<Student> GetStudents()
         {
@@ -18,6 +18,13 @@ namespace Integrator
             students.Add(new Student { Ideal = "sebhay-7", FirstName = "Sebastian", LastName = "Häyry", NationalIdentificationNumber = "8506241234" });
             students.Add(new Student { Ideal = "sebhel-7", FirstName = "Sebastian", LastName = "Hellström", NationalIdentificationNumber = "7906211234" });
             students.Add(new Student { Ideal = "filhuh-7", FirstName = "Filip", LastName = "Huhta", NationalIdentificationNumber = "8809151234" });
+            students[0].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "VG" };
+            students[1].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            students[2].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            students[3].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            students[4].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            students[5].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            students[6].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
             return students;
         }
     }
