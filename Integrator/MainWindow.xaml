@@ -6,7 +6,72 @@
         xmlns:local="clr-namespace:Integrator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    
+    <Grid Margin="10">
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="5"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    >
+            <Label Content="Korskod"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   />
+
+            <TextBox Text="D0031N"
+                     VerticalAlignment="Center"
+                     Width="100"
+                     FontSize="16"
+                     />
+
+            <Label Content="Termin"
+                   VerticalAlignment="Center"
+                   FontSize="16"
+                   />
+
+            <TextBox Text="HT19" 
+                     VerticalAlignment="Center"
+                     FontSize="16" 
+                     Width="100"
+                     />
+        </StackPanel>
+        
+        <DataGrid
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="2"
+            AutoGenerateColumns="False"
+            HorizontalGridLinesBrush="#FFBEBEBE"
+            VerticalGridLinesBrush="#FFBEBEBE"
+            CanUserAddRows="False"
+            >
+            <!--Set custom fornt size the datagrid column headers-->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="FontSize" Value="13"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="IDEAL" />
+                <DataGridTextColumn Header="Förnamn"/>
+                <DataGridTextColumn Header="Efternamn"/>
+                <DataGridTextColumn Header="Personnummer"/>
+                <DataGridTextColumn Header="Anmälningskod"/>
+                <DataGridTextColumn Header="Examination 003"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
     </Grid>
 </Window>
