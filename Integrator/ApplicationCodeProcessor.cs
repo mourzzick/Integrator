@@ -9,31 +9,30 @@ namespace Integrator
 {
     class ApplicationCodeProcessor
     {
-        public async Task<string> LoadApplicationCode(string courseCode, string semester)
+        public async Task<string> GetApplicationCodeAsync(string courseCode, string semester)
         {
             string url = string.Empty;
-            if (!string.IsNullOrEmpty(courseCode) && !string.IsNullOrEmpty(semester))
+         
+            if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(semester))
             {
-                url = $"http://localhost:3005/epok/api/registration-code/{courseCode}-{semester}";
+                throw new ArgumentOutOfRangeException("Course code and semester should not be null or empty.");
             }
-            else
-            {
-                throw new ArgumentOutOfRangeException();
-            }
+
+            url = $"http://localhost:3005/epok/api/registration-code/{courseCode}-{semester}";
+
             using (HttpResponseMessage response = await ApiHelper.httpClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    // TODO: finish this
+                    ApplicationCodeResponse info = await response.Content.ReadAsAsync<ApplicationCodeResponse>();
+                    return info.ApplicationCode;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
-
-            throw new NotImplementedException();
-             
         }
-        
-        // "registration_code": "ltu-22008",
-        // "course_code": "d0031n",
-        // "semester": "ht16"
+
     }
 }
