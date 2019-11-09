@@ -10,5 +10,11 @@ namespace Integrator
     {
         public string AssignmentId { get; set; }
         public string AssignmentGrade { get; set; }
+
+        public Assignment()
+        {
+            AssignmentId = string.Empty;
+            AssignmentGrade = string.Empty;
+        }
     }
 }
