@@ -30,7 +30,7 @@
                    VerticalAlignment="Center"
                    />
 
-            <TextBox Text="D0031N"
+            <TextBox x:Name="txtCourseCode"
                      VerticalAlignment="Center"
                      Width="100"
                      FontSize="16"
@@ -41,8 +41,19 @@
                    FontSize="16"
                    />
 
-            <TextBox Text="HT19" 
-                     VerticalAlignment="Center"
+            <TextBox x:Name="txtSemester" 
+                    VerticalAlignment="Center"
+                     FontSize="16" 
+                     Width="100"
+                     />
+
+            <Label Content="Provnummer"
+                   VerticalAlignment="Center"
+                   FontSize="16"
+                   />
+
+            <TextBox x:Name="txtProvnummer" 
+                    VerticalAlignment="Center"
                      FontSize="16" 
                      Width="100"
                      />
@@ -71,7 +82,7 @@
                 <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Anmälningskod" Binding="{Binding ApplicationCode}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Betyg" Binding="{Binding Assignment.AssignmentGrade, Mode=TwoWay}" />
             </DataGrid.Columns>
             
         </DataGrid>
