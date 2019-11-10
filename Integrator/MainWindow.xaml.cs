@@ -22,14 +22,16 @@ namespace Integrator
     {
         string courseCode;
         string semester;
-        string applicationCodes;
+        string applicationCode;
+        List<Student> students;
         public MainWindow()
         {
             InitializeComponent();
             ApiHelper.InitializeClient();
             courseCode = string.Empty;
             semester = string.Empty;
-            applicationCodes = string.Empty;
+            applicationCode = string.Empty;
+            students = new List<Student>();
 
         }
 
@@ -55,12 +57,14 @@ namespace Integrator
             return false;
         }
 
+        
+
         private async Task LoadApplicationCodes()
         {
-            ApplicationCodeProcessor processor = new ApplicationCodeProcessor();
+            ApplicationCodeProcessor applicationCodeProcessor = new ApplicationCodeProcessor();
             if (ReadCourseCode() && ReadSemester())
             {
-                applicationCodes = await processor.GetApplicationCodeAsync(courseCode, semester);
+                applicationCode = await applicationCodeProcessor.GetApplicationCodeAsync(courseCode, semester);
             }
             else
             {
@@ -68,17 +72,22 @@ namespace Integrator
             }
         }
 
-        //private async void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    StudentManager studentManager = new StudentManager();
-        //    List<Student> students = await studentManager.LoadStudents("ltu-00533");
+        private async void LoadStudents()
+        {
+            StudentManager studentManager = new StudentManager();
+            students = await studentManager.LoadStudents(applicationCode);
+            studentDataGrid.ItemsSource = students;
+        }
 
-        //    studentDataGrid.ItemsSource = students;
-        //}
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await LoadApplicationCodes();
+            LoadStudents();
+        }
 
 
 
-    
+
 
 
     }

@@ -12,7 +12,9 @@ namespace Integrator
         public async Task<string> GetApplicationCodeAsync(string courseCode, string semester)
         {
             string url = string.Empty;
-         
+            courseCode = courseCode.ToUpper();
+            semester = semester.ToUpper();
+
             if (string.IsNullOrEmpty(courseCode) || string.IsNullOrEmpty(semester))
             {
                 throw new ArgumentOutOfRangeException("Course code and semester should not be null or empty.");
