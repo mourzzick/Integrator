@@ -20,20 +20,66 @@ namespace Integrator
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Student> students = StudentDAO.GetStudents();
+        string courseCode;
+        string semester;
+        string applicationCodes;
         public MainWindow()
         {
             InitializeComponent();
-            studentDataGrid.ItemsSource = students;
+            ApiHelper.InitializeClient();
+            courseCode = string.Empty;
+            semester = string.Empty;
+            applicationCodes = string.Empty;
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private bool ReadCourseCode()
         {
-            foreach (var student in students)
+            string input = txtCourseCode.Text.Trim();
+            if (!string.IsNullOrEmpty(input))
             {
-                Console.WriteLine(student.Assignment.AssignmentGrade);
+                courseCode = input;
+                return true;
             }
-            
+            return false;
         }
+
+        private bool ReadSemester()
+        {
+            string input = txtSemester.Text.Trim();
+            if (!string.IsNullOrEmpty(input))
+            {
+                semester = input;
+                return true;
+            }
+            return false;
+        }
+
+        private async Task LoadApplicationCodes()
+        {
+            ApplicationCodeProcessor processor = new ApplicationCodeProcessor();
+            if (ReadCourseCode() && ReadSemester())
+            {
+                applicationCodes = await processor.GetApplicationCodeAsync(courseCode, semester);
+            }
+            else
+            {
+                MessageBox.Show("Du måste ange korrekt kurskod och termin.");
+            }
+        }
+
+        //private async void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    StudentManager studentManager = new StudentManager();
+        //    List<Student> students = await studentManager.LoadStudents("ltu-00533");
+
+        //    studentDataGrid.ItemsSource = students;
+        //}
+
+
+
+    
+
+
     }
 }
