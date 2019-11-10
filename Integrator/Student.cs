@@ -13,7 +13,6 @@ namespace Integrator
         public string Ideal { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
         [JsonProperty("student")]
         public string NationalIdentificationNumber { get; set; }
         public string ApplicationCode { get; set; }

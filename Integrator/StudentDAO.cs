@@ -11,13 +11,13 @@ namespace Integrator
         public static List<Student> GetStudents()
         {
             List<Student> students = new List<Student>();
-            students.Add(new Student { Ideal = "rusgoe-7", FirstName = "Ruslan", LastName = "Georgiev", NationalIdentificationNumber = "8301281234" });
-            students.Add(new Student { Ideal = "cargra-7", FirstName = "Carl", LastName = "Granström", NationalIdentificationNumber = "8606251234" });
-            students.Add(new Student { Ideal = "josgus-8", FirstName = "Josefine", LastName = "Gustafsson", NationalIdentificationNumber = "9007091234" });
-            students.Add(new Student { Ideal = "frehar-7", FirstName = "Fredrik", LastName = "Harnevik", NationalIdentificationNumber = "8701151234" });
-            students.Add(new Student { Ideal = "sebhay-7", FirstName = "Sebastian", LastName = "Häyry", NationalIdentificationNumber = "8506241234" });
-            students.Add(new Student { Ideal = "sebhel-7", FirstName = "Sebastian", LastName = "Hellström", NationalIdentificationNumber = "7906211234" });
-            students.Add(new Student { Ideal = "filhuh-7", FirstName = "Filip", LastName = "Huhta", NationalIdentificationNumber = "8809151234" });
+            students.Add(new Student { Ideal = "rusgeo-7", FirstName = "Ruslan", LastName = "Georgiev", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "mihcob-7", FirstName = "Carl", LastName = "Granström", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "josgus-8", FirstName = "Josefine", LastName = "Gustafsson", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "klahar-7", FirstName = "Fredrik", LastName = "Harnevik", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "sebhay-7", FirstName = "Sebastian", LastName = "Häyry", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "malhar-3", FirstName = "Sebastian", LastName = "Hellström", NationalIdentificationNumber = "" });
+            students.Add(new Student { Ideal = "filhuh-7", FirstName = "Filip", LastName = "Huhta", NationalIdentificationNumber = "" });
             students[0].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "VG" };
             students[1].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
             students[2].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
