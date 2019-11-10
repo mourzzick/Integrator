@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Integrator
 {
-    class StudentProcessor
+    public class StudentProcessor
     {
         public async Task<List<Student>> GetStudentsAsync(string applicationCode)
         {
