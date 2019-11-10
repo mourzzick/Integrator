@@ -67,6 +67,8 @@
     <Compile Include="ApplicationCodeResponse.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentDAO.cs" />
+    <Compile Include="StudentManager.cs" />
+    <Compile Include="StudentProcessor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
