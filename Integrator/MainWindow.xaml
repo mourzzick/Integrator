@@ -70,7 +70,7 @@
                 <DataGridTextColumn Header="Förnamn" Binding="{Binding FirstName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Efternamn" Binding="{Binding LastName}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Personnummer" Binding="{Binding NationalIdentificationNumber}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Anmälningskod" Binding="{Binding CourseRegistrationNumber}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Anmälningskod" Binding="{Binding ApplicationCode}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Examination 003" Binding="{Binding Assignment.AssignmentGrade, Mode=TwoWay}" />
             </DataGrid.Columns>
             
