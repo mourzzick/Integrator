@@ -23,6 +23,7 @@ namespace Integrator
         string courseCode;
         string semester;
         string applicationCode;
+        string assignmentId;
         List<Student> students;
         public MainWindow()
         {
@@ -31,8 +32,46 @@ namespace Integrator
             courseCode = string.Empty;
             semester = string.Empty;
             applicationCode = string.Empty;
+            assignmentId = string.Empty;
             students = new List<Student>();
+        }
 
+        private async Task LoadApplicationCodes()
+        {
+            ApplicationCodeProcessor applicationCodeProcessor = new ApplicationCodeProcessor();
+            if (ReadCourseCode() && ReadSemester())
+            {
+                applicationCode = await applicationCodeProcessor.GetApplicationCodeAsync(courseCode, semester);
+            }
+            else
+            {
+                MessageBox.Show("Du måste ange korrekt kurskod och termin.");
+            }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await LoadApplicationCodes();
+            LoadStudents();
+        }
+
+        private async void LoadStudents()
+        {
+            StudentManager studentManager = new StudentManager();
+            students = await studentManager.LoadStudents(applicationCode);
+            AddAssignmentId();
+            studentDataGrid.ItemsSource = students;
+        }
+
+        private void AddAssignmentId()
+        {
+            if (ReadAssignmentId())
+            {
+                foreach (Student student in students)
+                {
+                    student.Assignment.AssignmentId = assignmentId;
+                }
+            }
         }
 
         private bool ReadCourseCode()
@@ -57,38 +96,16 @@ namespace Integrator
             return false;
         }
 
-        
-
-        private async Task LoadApplicationCodes()
+        private bool ReadAssignmentId()
         {
-            ApplicationCodeProcessor applicationCodeProcessor = new ApplicationCodeProcessor();
-            if (ReadCourseCode() && ReadSemester())
+            string input = txtAssignmentId.Text.Trim();
+            if (!string.IsNullOrEmpty(input))
             {
-                applicationCode = await applicationCodeProcessor.GetApplicationCodeAsync(courseCode, semester);
+                assignmentId = input;
+                return true;
             }
-            else
-            {
-                MessageBox.Show("Du måste ange korrekt kurskod och termin.");
-            }
+            return false;
         }
 
-        private async void LoadStudents()
-        {
-            StudentManager studentManager = new StudentManager();
-            students = await studentManager.LoadStudents(applicationCode);
-            studentDataGrid.ItemsSource = students;
-        }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            await LoadApplicationCodes();
-            LoadStudents();
-        }
-
-
-
-
-
-
-    }
+    } // end class
 }

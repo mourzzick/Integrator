@@ -52,7 +52,7 @@
                    FontSize="16"
                    />
 
-            <TextBox x:Name="txtProvnummer" 
+            <TextBox x:Name="txtAssignmentId" 
                     VerticalAlignment="Center"
                      FontSize="16" 
                      Width="100"

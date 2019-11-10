@@ -17,5 +17,16 @@ namespace Integrator
         public string NationalIdentificationNumber { get; set; }
         public string ApplicationCode { get; set; }
         public Assignment Assignment { get; set; }
+
+        public Student()
+        {
+            Ideal = string.Empty;
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            NationalIdentificationNumber = string.Empty;
+            ApplicationCode = string.Empty;
+            Assignment = new Assignment();
+        }
     }
+
 }

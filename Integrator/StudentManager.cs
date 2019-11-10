@@ -25,7 +25,6 @@ namespace Integrator
         public async Task<List<Student>> LoadStudents(string applicationCode)
         {
             StudentProcessor studentProcessor = new StudentProcessor();
-
             List<Student> idealStudents = await studentProcessor.GetStudentsAsync(applicationCode);
             foreach (Student student in idealStudents)
             {

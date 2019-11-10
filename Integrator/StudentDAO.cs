@@ -18,13 +18,13 @@ namespace Integrator
             students.Add(new Student { Ideal = "sebhay-7", FirstName = "Sebastian", LastName = "Häyry", NationalIdentificationNumber = "" });
             students.Add(new Student { Ideal = "malhar-3", FirstName = "Sebastian", LastName = "Hellström", NationalIdentificationNumber = "" });
             students.Add(new Student { Ideal = "filhuh-7", FirstName = "Filip", LastName = "Huhta", NationalIdentificationNumber = "" });
-            students[0].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "VG" };
-            students[1].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
-            students[2].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
-            students[3].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
-            students[4].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
-            students[5].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
-            students[6].Assignment = new Assignment { AssignmentId = "003", AssignmentGrade = "G" };
+            //students[0].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[1].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[2].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[3].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[4].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[5].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
+            //students[6].Assignment = new Assignment { AssignmentId = "", AssignmentGrade = "" };
             return students;
         }
     }
