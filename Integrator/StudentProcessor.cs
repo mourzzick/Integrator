@@ -18,7 +18,7 @@ namespace Integrator
                 throw new ArgumentOutOfRangeException("Application code should not be null or empty.");
             }
 
-            url = $" http://localhost:3010/ideal/v1/course/{applicationCode}/students";
+            url = $" http://ec2-3-134-97-177.us-east-2.compute.amazonaws.com:3010/ideal/v1/course/{applicationCode}/students";
 
             using (HttpResponseMessage response = await ApiHelper.httpClient.GetAsync(url))
             {

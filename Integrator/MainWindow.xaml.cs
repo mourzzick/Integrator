@@ -72,17 +72,31 @@ namespace Integrator
             }
         }
 
-        private async void LoadStudents()
+        private async Task LoadStudents()
         {
             StudentManager studentManager = new StudentManager();
             students = await studentManager.LoadStudents(applicationCode);
             studentDataGrid.ItemsSource = students;
+    
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             await LoadApplicationCodes();
-            LoadStudents();
+            await LoadStudents();
+            ResponsObjectLadok responsObjectLadok = new ResponsObjectLadok();
+            responsObjectLadok.CourseCode = applicationCode;
+            responsObjectLadok.Date = "2019-10-10";
+            responsObjectLadok.Examination = students[0].Assignment.AssignmentId = "004";
+            List<ListOfGrade> listOfGrades = new List<ListOfGrade>();
+            ListOfGrade grade = new ListOfGrade();
+            grade.Grade = "VG";
+            grade.Student = "1111";
+            listOfGrades.Add(grade);
+            responsObjectLadok.ListOfGrades = listOfGrades;
+            LadokProcessor ladokProcessor = new LadokProcessor();
+            Console.WriteLine(ladokProcessor.PostGrades(responsObjectLadok));
+            
         }
 
 
