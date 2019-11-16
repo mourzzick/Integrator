@@ -5,11 +5,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Integrator
+namespace Integrator.ladok
 {
     class LadokProcessor
     {
-        public async Task<string> PostGrades(ResponsObjectLadok responsObject)
+        public async Task<string> PostGrades(LadokDataTransferObject responsObject)
         {
             string url = string.Empty;
 

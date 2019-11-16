@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Integrator
 {
-    public class ApplicationCodeResponse
+    public class EpokDataTransferObject
     {
         [JsonProperty("registration_code")]
         public string ApplicationCode { get; set; }
@@ -16,6 +16,6 @@ namespace Integrator
         public string CourseCode { get; set; }
 
         [JsonProperty("semester")]
-        public string Semester { get; set; }
+        public string Period { get; set; }
     }
 }

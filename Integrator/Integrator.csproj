@@ -62,16 +62,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApiHelper.cs" />
-    <Compile Include="ApplicationCodeProcessor.cs" />
+    <Compile Include="epok\ApplicationCodeProcessor.cs" />
     <Compile Include="Assignment.cs" />
-    <Compile Include="ApplicationCodeResponse.cs" />
-    <Compile Include="LadokProcessor.cs" />
-    <Compile Include="ListOfGrades.cs" />
-    <Compile Include="ResponseObjectLadok.cs" />
+    <Compile Include="epok\ApplicationCodeResponse.cs" />
+    <Compile Include="ladok\LadokProcessor.cs" />
+    <Compile Include="ladok\StudentGradeObject.cs" />
+    <Compile Include="ladok\LadokDataTransferObject.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentDAO.cs" />
     <Compile Include="StudentManager.cs" />
-    <Compile Include="StudentProcessor.cs" />
+    <Compile Include="ideal\StudentProcessor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,5 +112,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

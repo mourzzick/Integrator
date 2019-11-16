@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Integrator
 {
-    public class ResponsObjectLadok
+    public class LadokDataTransferObject
     {
         [JsonProperty("courseCode")]
         public string CourseCode { get; set; }
@@ -16,15 +16,15 @@ namespace Integrator
         public string Examination { get; set; }
 
         [JsonProperty("date")]
-        public String Date { get; set; }
+        public string Date { get; set; }
 
         [JsonProperty("listOfGrades")]
-        public List<ListOfGrade> ListOfGrades { get; set; }
+        public List<StudentGradeObject> ListOfGrades { get; set; }
 
-        public ResponsObjectLadok()
+        public LadokDataTransferObject()
         {
             Examination = String.Empty;
-            ListOfGrades = new List<ListOfGrade>();
+            ListOfGrades = new List<StudentGradeObject>();
         }
     }
     

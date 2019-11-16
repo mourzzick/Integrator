@@ -84,12 +84,12 @@ namespace Integrator
         {
             await LoadApplicationCodes();
             await LoadStudents();
-            ResponsObjectLadok responsObjectLadok = new ResponsObjectLadok();
+            LadokDataTransferObject responsObjectLadok = new LadokDataTransferObject();
             responsObjectLadok.CourseCode = applicationCode;
             responsObjectLadok.Date = "2019-10-10";
             responsObjectLadok.Examination = students[0].Assignment.AssignmentId = "004";
-            List<ListOfGrade> listOfGrades = new List<ListOfGrade>();
-            ListOfGrade grade = new ListOfGrade();
+            List<StudentGradeObject> listOfGrades = new List<StudentGradeObject>();
+            StudentGradeObject grade = new StudentGradeObject();
             grade.Grade = "VG";
             grade.Student = "1111";
             listOfGrades.Add(grade);

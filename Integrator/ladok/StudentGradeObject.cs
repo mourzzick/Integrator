@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Integrator
 {
-    public class ListOfGrade
+    public class StudentGradeObject
     {
         [JsonProperty("student")]
         public string Student { get; set; }
