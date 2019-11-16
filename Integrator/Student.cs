@@ -20,13 +20,7 @@ namespace Integrator
 
         public Student()
         {
-            Ideal = string.Empty;
-            FirstName = string.Empty;
-            LastName = string.Empty;
-            NationalIdentificationNumber = string.Empty;
-            ApplicationCode = string.Empty;
             Assignment = new Assignment();
         }
     }
-
 }
