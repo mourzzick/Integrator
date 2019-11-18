@@ -51,7 +51,7 @@ namespace Integrator
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    return string.Empty;
                 }
             }
         }

@@ -19,12 +19,14 @@ namespace Integrator
         public string Date { get; set; }
 
         [JsonProperty("listOfGrades")]
-        public List<StudentGradeObject> ListOfGrades { get; set; }
+        public List<StudentGradeObject> StudentGradeObjectList { get; set; }
 
         public LadokDataTransferObject()
         {
-            Examination = String.Empty;
-            ListOfGrades = new List<StudentGradeObject>();
+            CourseCode = string.Empty;
+            Examination = string.Empty;
+            Date = string.Empty;
+            StudentGradeObjectList = new List<StudentGradeObject>();
         }
     }
     

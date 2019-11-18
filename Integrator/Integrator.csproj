@@ -64,7 +64,7 @@
     <Compile Include="ApiHelper.cs" />
     <Compile Include="epok\ApplicationCodeProcessor.cs" />
     <Compile Include="Assignment.cs" />
-    <Compile Include="epok\ApplicationCodeResponse.cs" />
+    <Compile Include="epok\EpokDataTransferObject.cs" />
     <Compile Include="ladok\LadokProcessor.cs" />
     <Compile Include="ladok\StudentGradeObject.cs" />
     <Compile Include="ladok\LadokDataTransferObject.cs" />
@@ -112,6 +112,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="export\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

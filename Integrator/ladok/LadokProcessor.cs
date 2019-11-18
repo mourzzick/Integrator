@@ -9,19 +9,17 @@ namespace Integrator.ladok
 {
     class LadokProcessor
     {
-        public async Task<string> PostGrades(LadokDataTransferObject responsObject)
+        public async Task<Uri> PostGrades(LadokDataTransferObject dataTransferObject)
         {
-            string url = string.Empty;
+            string url = $"http://ec2-3-134-97-177.us-east-2.compute.amazonaws.com:3000/ladok/v1/grades";
 
-            url = $"http://ec2-3-134-97-177.us-east-2.compute.amazonaws.com:3000/ladok/v1/grades";
-
-            using (HttpResponseMessage response = await ApiHelper.httpClient.PostAsJsonAsync(url, responsObject))
+            using (HttpResponseMessage response = await ApiHelper.httpClient.PostAsJsonAsync(url, dataTransferObject))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    string x = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(x);
-                    return x;
+                    string s = response.StatusCode.ToString();
+                    Console.WriteLine(response.Content);
+                    return response.Headers.Location;
                 }
                 else
                 {

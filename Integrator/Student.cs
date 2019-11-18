@@ -22,5 +22,11 @@ namespace Integrator
         {
             Assignment = new Assignment();
         }
+
+        public string GetPrintableStudent()
+        {
+            string studentString = $"{Ideal} {FirstName} {LastName} {NationalIdentificationNumber} {ApplicationCode} {Assignment.AssignmentGrade}";
+            return studentString;
+        }
     }
 }

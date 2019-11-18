@@ -58,7 +58,7 @@
                      Width="100"
                      />
         </StackPanel>
-        
+
         <DataGrid
             x:Name="studentDataGrid"
             Grid.Column="0"
@@ -67,15 +67,16 @@
             AutoGenerateColumns="False"
             HorizontalGridLinesBrush="#FFBEBEBE"
             VerticalGridLinesBrush="#FFBEBEBE"
-            CanUserAddRows="False"
+            CanUserAddRows="False" FontSize="16"
             >
             <!--Set custom fornt size the datagrid column headers-->
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="FontSize" Value="13"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
-            
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IDEAL" Binding="{Binding Ideal}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Förnamn" Binding="{Binding FirstName}" IsReadOnly="True"/>
@@ -84,8 +85,30 @@
                 <DataGridTextColumn Header="Anmälningskod" Binding="{Binding ApplicationCode}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Betyg" Binding="{Binding Assignment.AssignmentGrade, Mode=TwoWay}" />
             </DataGrid.Columns>
-            
         </DataGrid>
-        <Button Grid.Row="2" Content="Read Students" FontSize="16" Margin="5" Click="Button_Click"/>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btnGetStudents"
+                    Click="btnGetStudents_Click"
+                    Content="Hämta Studenter"
+                    Grid.Column="0" Margin="0,5,5,5"
+                    FontSize="16" Height="30"/>
+            
+            <Button x:Name="btnRegisterGrades" Content="Registrera Betyg"
+                    Click="btnRegisterGrades_Click"
+                    Grid.Column="1"
+                    Margin="5,5,0,5"
+                    FontSize="16"/>
+        </Grid>
+
+
+
+      
+
     </Grid>
 </Window>
